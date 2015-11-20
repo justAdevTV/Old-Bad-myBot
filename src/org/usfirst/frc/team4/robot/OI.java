@@ -12,8 +12,8 @@ import edu.wpi.first.wpilibj.Joystick;
 public class OI {
 
 	public OI() {
-		RobotMap.opA.toggleWhenPressed(new ClawToggle());
-		RobotMap.opB.toggleWhenPressed(new ArmToggle());
+		RobotMap.opA.whenPressed(new ClawToggle());
+		RobotMap.opB.whenPressed(new ArmToggle());
 	}
 
 	public double rightY(Joystick cont) {

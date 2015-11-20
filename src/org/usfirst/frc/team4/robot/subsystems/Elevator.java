@@ -19,7 +19,8 @@ public class Elevator extends Subsystem {
     }
     
     public void eleVator(double height){
-    	eleUrMom.set(Robot.oi.leftY(RobotMap.opCont));
+    	//Motor is reversed
+    	eleUrMom.set(-height);
     }
     
     public void stop(){

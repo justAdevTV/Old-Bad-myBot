@@ -30,12 +30,14 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-		oi = new OI();
+		RobotMap.init();
+    	oi = new OI();
 		pneumatics = new Pneumatics();
 		chassis = new Chassis();
 		elevator = new Elevator();
         // instantiate the command used for the autonomous period
         pneumatics.compStart();
+        
     }
 	
 	public void disabledPeriodic() {

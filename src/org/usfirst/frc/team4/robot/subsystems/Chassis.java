@@ -20,7 +20,7 @@ public class Chassis extends Subsystem {
     public void initDefaultCommand() {
         setDefaultCommand(new Drive());
     }
-    //Mor Functions
+    
     public void tankDrive(double right, double left){
     	rightFwd.set(right);
     	rightRwd.set(right);
@@ -29,7 +29,7 @@ public class Chassis extends Subsystem {
     	leftFwd.set(-left);
     	leftRwd.set(-left);
     }
-    //Methods
+    
     public void stop(){
     	tankDrive(0,0);
     }

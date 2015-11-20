@@ -14,7 +14,7 @@ public class Pneumatics extends Subsystem {
 	public boolean isClawOpen = true;
 	public boolean isArmOpen = true;
 	
-	private Compressor compressor = new Compressor(-1);
+	private Compressor compressor = new Compressor(RobotMap.PNUEMATICS_COMPRESSOR);
     
     private DoubleSolenoid leftClaw = new DoubleSolenoid(RobotMap.PNEUMATICS_CLAW_LEFT_FWD, RobotMap.PNEUMATICS_CLAW_LEFT_RWD);
     private DoubleSolenoid rightClaw = new DoubleSolenoid(RobotMap.PNEUMATICS_CLAW_RIGHT_FWD, RobotMap.PNEUMATICS_CLAW_RIGHT_RWD);
