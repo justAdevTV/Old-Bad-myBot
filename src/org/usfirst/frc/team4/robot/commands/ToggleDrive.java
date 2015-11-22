@@ -1,41 +1,47 @@
 package org.usfirst.frc.team4.robot.commands;
 
 import org.usfirst.frc.team4.robot.Robot;
-import org.usfirst.frc.team4.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class Drive extends Command {
+public class ToggleDrive extends Command {
 
-    public Drive() {
-    	requires(Robot.chassis);
+    public ToggleDrive() {
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	System.out.println("Switching to " + findMode());
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.chassis.tankDrive(Robot.oi.rightY(RobotMap.driveCont), Robot.oi.leftY(RobotMap.driveCont));
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.chassis.stop();
+    	Robot.chassis.tank = !Robot.chassis.tank;
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
     	end();
+    }
+    
+    private String findMode(){
+    	if (Robot.chassis.tank){
+    		return "Arcade.";
+    	} else {
+    		return "Tank.";
+    	}
     }
 }
